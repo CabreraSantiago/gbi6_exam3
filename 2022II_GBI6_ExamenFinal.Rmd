@@ -173,6 +173,20 @@ cat(paste0('<center><img src="', img4,'" width="200" height="200" alt=""></cente
 ```{r p1.1, echo=TRUE, warning=FALSE, fig.height=8}
 # Escriba aquí su código
 
+p4 = ggplot(pinguinos, aes(x=body_mass_g, y = flipper_length_mm, color=factor(sex))) + 
+  scale_x_log10() + scale_y_log10() +
+  geom_point(size=0.5, alpha=0.5) + geom_smooth(method = "lm", se = FALSE, na.rm = TRUE) +
+  facet_grid(factor(sex)~factor(island)) + theme_classic() + theme(legend.position = "none") +
+  stat_poly_eq(coef.digits = 2,use_label(c("eq", "adj.R2")), formula = y ~ poly(x,1, raw = TRUE), 
+               label.x.npc = 0.9, label.y.npc = 1.0, cex=3) +
+  labs(x = "Masa Corporal [g]", y = "Largo de Aleta [mm]")
+
+p4
+
+pin = pinguinos %>% select(bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g)
+cor = ggcorrplot(pin, type = "lower", outline.col = "white")
+cor
+```
 ```
 
 **INTERPRETACIÓN**
