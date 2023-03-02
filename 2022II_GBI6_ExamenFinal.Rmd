@@ -147,7 +147,7 @@ ggarrange(p3, ggarrange(p1, p2, labels =c("b", "c"), nrow=2),
 ### [1.0 punto] 1.1. Interprete lo que se muestra en la figura anterior
 
 **INTERPRETACIÓN**
-* Según la gráfica P1 se observa que datos del eje X pertenecen al ancho de los picos lo cual   * 
+**Según la gráfica P1 se observa que datos del eje X pertenecen al ancho de los picos lo cual**
 
 ### [3.0 puntos] 1.2. Genere dos gráficas `p4` y `p5`donde: 
 
