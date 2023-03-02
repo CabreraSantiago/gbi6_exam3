@@ -147,7 +147,9 @@ ggarrange(p3, ggarrange(p1, p2, labels =c("b", "c"), nrow=2),
 ### [1.0 punto] 1.1. Interprete lo que se muestra en la figura anterior
 
 **INTERPRETACIÓN**
-**Según la gráfica P1 se observa que datos del eje X pertenecen al ancho de los picos lo cual**
+- El primer gráfico muestra que el eje X representa las islas donde se da cada especie, el eje Y representa la especie de pingüino y los pingüinos están agrupados por sexo. El segundo diagrama muestra un diagrama de dispersión de la altura del pico, con el eje x representando las especies de pingüinos y el eje y representando las especies de pingüinos barbijo y papúa con los picos más largos. La ultima grafica muestra la relación entre la anchura y la longitud del pico de los pingüinos en función de la especie y la isla. Cada recuadro es una combinación de especie e isla y muestra un diagrama de dispersión con una línea de regresión lineal ajustada. La línea de regresión lineal muestra la tendencia general de los datos y puede ayudarte a entender la relación entre la anchura y la longitud del pico para cada especie/isla.
+
+Traducción realizada con la versión gratuita del traductor www.DeepL.com/Translator
 
 ### [3.0 puntos] 1.2. Genere dos gráficas `p4` y `p5`donde: 
 
