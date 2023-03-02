@@ -123,15 +123,12 @@ p1 = ggerrorplot(pinguinos, x = "species", y = "bill_length_mm", color = "sex",
   xlab("Especies") + ylab("Longitud de pico (mm)") +
   scale_y_continuous(limits = c(30, 60)) +
   theme_bw() + theme(text = element_text(size=12), legend.position="none") 
-
 p2 = ggboxplot(pinguinos, x = "species", y = "bill_depth_mm",
                color = "species", lwd=1.5, shape = "species") +
   geom_jitter(position = position_jitter(seed = 2021, width = 0.2), size = 0.6, alpha = 0.25) + 
   xlab("Especies") + ylab("Ancho de pico (mm)") +
   scale_y_continuous(limits = c(10, 20)) +
   theme_bw() + theme(text = element_text(size=12), legend.position="none") 
-
-
 p3 = ggplot(pinguinos, aes(x=bill_length_mm, y = bill_depth_mm, color=factor(species))) + 
   scale_x_log10() + scale_y_log10() +
   geom_point(size=0.5, alpha=0.5) + geom_smooth(method = "lm", se = FALSE, na.rm = TRUE) +
@@ -139,17 +136,13 @@ p3 = ggplot(pinguinos, aes(x=bill_length_mm, y = bill_depth_mm, color=factor(spe
   stat_poly_eq(coef.digits = 2,use_label(c("eq", "adj.R2")), formula = y ~ poly(x,1, raw = TRUE), 
                label.x.npc = 0.9, label.y.npc = 1.0, cex=3) +
   labs(x = "Ancho de pico [mm]", y = "Largo de pico [mm]")
-
 ggarrange(p3, ggarrange(p1, p2, labels =c("b", "c"), nrow=2), 
           labels = "a", ncol=2)
 ```
 
 ### [1.0 punto] 1.1. Interprete lo que se muestra en la figura anterior
 
-**INTERPRETACIÓN**
 - El primer gráfico muestra que el eje X representa las islas donde se da cada especie, el eje Y representa la especie de pingüino y los pingüinos están agrupados por sexo. El segundo diagrama muestra un diagrama de dispersión de la altura del pico, con el eje x representando las especies de pingüinos y el eje y representando las especies de pingüinos barbijo y papúa con los picos más largos. La ultima grafica muestra la relación entre la anchura y la longitud del pico de los pingüinos en función de la especie y la isla. Cada recuadro es una combinación de especie e isla y muestra un diagrama de dispersión con una línea de regresión lineal ajustada. La línea de regresión lineal muestra la tendencia general de los datos y puede ayudarte a entender la relación entre la anchura y la longitud del pico para cada especie/isla.
-
-Traducción realizada con la versión gratuita del traductor www.DeepL.com/Translator
 
 ### [3.0 puntos] 1.2. Genere dos gráficas `p4` y `p5`donde: 
 
@@ -172,7 +165,6 @@ cat(paste0('<center><img src="', img4,'" width="200" height="200" alt=""></cente
 
 ```{r p1.1, echo=TRUE, warning=FALSE, fig.height=8}
 # Escriba aquí su código
-
 p4 = ggplot(pinguinos, aes(x=body_mass_g, y = flipper_length_mm, color=factor(sex))) + 
   scale_x_log10() + scale_y_log10() +
   geom_point(size=0.5, alpha=0.5) + geom_smooth(method = "lm", se = FALSE, na.rm = TRUE) +
@@ -180,13 +172,10 @@ p4 = ggplot(pinguinos, aes(x=body_mass_g, y = flipper_length_mm, color=factor(se
   stat_poly_eq(coef.digits = 2,use_label(c("eq", "adj.R2")), formula = y ~ poly(x,1, raw = TRUE), 
                label.x.npc = 0.9, label.y.npc = 1.0, cex=3) +
   labs(x = "Masa Corporal [g]", y = "Largo de Aleta [mm]")
-
 p4
-
 pin = pinguinos %>% select(bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g)
 cor = ggcorrplot(pin, type = "lower", outline.col = "white")
 cor
-```
 ```
 
 **INTERPRETACIÓN**
@@ -232,12 +221,10 @@ metadata_heatmap <- metadata  %>%
   dplyr::select(sample, treatment_hours, serum) %>% 
   mutate(sample=factor(sample, levels=colnames(expr_dist))) %>% 
   arrange(sample) %>%  unique() 
-
 ha_column = HeatmapAnnotation(df = data.frame(Tiempo = metadata_heatmap$treatment_hours,
                                               Suero = metadata_heatmap$serum), 
                               col = list(Serum = c("HS" =  magma(20)[2], "HIHS" = magma(20)[3]),
                                          Time = c("24" = magma(20)[14], "48" = magma(20)[12])))
-
 # Mapa de calor anotado en la parte superior
 Heatmap(expr_dist,  col=viridis(10), 
         name = 'Distancias', top_annotation = ha_column, )
@@ -277,7 +264,6 @@ Aquí se carga los datos `EMTAB6141.rdata` que se requiere para este ejercicio. 
 
 ```{r}
 # Cargue aquí sus datos
-
 ```
 
 En la siguiente celda de código, realice la réplica del mapa de calor que se encuentra a la izquierda (`hmap1`) de esta figura: 
@@ -298,17 +284,11 @@ cat(paste0('<center><img src="', img5,'" width="700" height="700" alt=""></cente
 Su repositorio de GitHub debe tener al menos los sigueites elementos: 
 
 - Haber sido ``clonado` del repositorio del profesor.
-
 - Haber sido enlazado a un repositorio local (`Project`) generado en RStudio.
-
 - Tener el archivos .Rmd 
-
 - Tener el archivo .HTML del examen (**MANDATORIO PARA CALIFICAR**).
-
 - Tener al menos 3 controles de la versión.
-
 - Tener un README.md con: 
-
   - información personal, 
   
   - información del equipo, 
