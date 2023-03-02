@@ -6,9 +6,6 @@ Examen de Bioinformática, módulo de Python
   - **Carrera:** Ing. en Biotecnologia
   - **Semestre:** 6to 
   - **Materia:** Bioinformática
-## Versión de Python/Anaconda y de cada uno de los módulos/paquetes y utilizados ##
-Para Python se usó la version 
-##Explicación de la data utilizada ##
 ## Programas y paquetes utilizados con sus respectivas versiones ## 
 Rstudio   ver. 2022.12.0+353
 R         ver. 4.2.2
